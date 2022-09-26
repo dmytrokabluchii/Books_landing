@@ -1,0 +1,107 @@
+.footer {
+    &__wrapper {
+        padding: 95px 0 0;
+        background-color: $color_dblue;
+    }
+    &__main {
+        display: grid;
+        gap: 35px;
+        grid-template-columns: 23.3% 15.5% 21% auto;
+        padding-bottom: 95px;
+    }
+    &__media {
+        .footer-logo {
+            padding-bottom: 12px;
+        }
+        .media-list {
+            display: inline-flex;
+            gap: 10px;
+            .footer-media {
+                fill: $color_white;
+            }
+            &__link {
+                width: 55px;
+                height: 55px;
+                border: 1px solid $color_orange;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: $transition3s;
+                &:hover {
+                    background-color: $color_white;
+                    border: 1px solid $color_black;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        &-title {
+            color: $color_white;
+            padding: 5px 0 30px;
+        }
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            padding-left: 10px;
+            &__link {
+                transition: $transition3s;
+                color: $color_lblue;
+                line-height: 160%;
+                &_point {
+                    @include fz(22);
+                    color: $color_orange;
+                    letter-spacing: 0.1em;
+                }
+                &:hover {
+                    color: $color_orange;
+                }
+            }
+        }
+        .footer-contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            &__item { 
+                display: flex;
+                gap: 10px;
+                padding: 5px 70px 0 0;
+                &_text {
+                    flex: 1 0 28%;
+                    font-family: "Cardo";
+                    font-weight: 400;
+                    @include fz(18);
+                    line-height: 110%;
+                    color: $color_white;
+                }
+                &_link {
+                    flex: 1 0 72%;
+                    color: $color_lblue;
+                    line-height: 150%;
+                    transition: $transition3s;
+                    &:hover {
+                        color: $color_orange;
+                    }
+                }
+            }
+        }
+    }
+    &__made {
+        text-align: center;
+        padding-bottom: 25px;
+        line-height: 160%;
+        color: $color_lblue;
+        &-link {
+            transition: $transition3s;
+            color: $color_white;
+            &:hover {
+                color: $color_orange;
+            }
+        }
+    }
+
+}
+
+

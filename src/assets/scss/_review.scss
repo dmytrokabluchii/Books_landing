@@ -1,0 +1,97 @@
+.review {
+    &__wrapper {
+        padding: 130px 0 130px;
+    }
+    &__main {
+        display: grid;
+        gap: 70px;
+        grid-template-columns: 33% auto;
+    }
+    .info {
+        &__title {
+            padding: 105px 0 65px;
+            .title {
+                line-height: 112%;
+                &::after {
+                    bottom: -30px;
+                    left: 0;
+                }
+            }
+        }
+        .subtitle {
+            line-height: 190%;
+            padding-bottom: 25px;
+        }
+        &__ratings {
+            .ratings-figure {
+                padding-bottom: 15px;
+                display: flex;
+                gap: 10px;
+                &__count {
+                    font-family: "Cardo";
+                    font-weight: 400;
+                    @include fz(22);
+                    line-height: 90%;
+                    color: $color_dblue;
+                }
+            }
+            &-text {
+                color: $color_dblue;
+            }
+        }
+    }
+
+    .review-column {
+        display: flex;
+        gap: 20px;
+        margin-right: 20px;
+        &__left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        &__right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &__item {
+            padding: 30px 25px 20px 35px;
+            background-color: $color_dblue;
+            .item-about {
+                display: flex;
+                gap: 20px;
+                padding-bottom: 20px;
+                .client-photo {
+                    max-width: 85px;
+                    max-height: 85px;
+                }
+                &__info {
+                    padding: 15px 0 10px 0;
+                    .item-name {
+                        padding-bottom: 20px;
+                        color: $color_white;
+                    }
+                }
+            }
+            .review-about {
+                &__title {
+                    font-family: "Cardo";
+                    color: $color_white;
+                    font-weight: 400;
+                    @include fz(22);
+                    line-height: 130%;
+                    padding-bottom: 15px;
+                }
+                .subtitle {
+                    color: $color_lblue;
+                    line-height: 165%;
+                }
+            }
+            
+        }
+    }
+
+
+
+}
