@@ -15,5 +15,5 @@ To start gulp project:
 npm install --global gulp-cli
 npm init
 npm install --save-dev gulp
-gulp build
+gulp build (if appear error, to start "gulp build" second time!)
 gulp serve
