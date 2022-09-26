@@ -109,6 +109,36 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   burgerMenu(burgerButton, mobileMenu, burgerLinks);
 
+  // Modal-window-callback
+  function openModal(window, background) {
+    window.classList.toggle('active');
+    background.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  // переберем наши кнопки btnModalOpen чтобы мы могли с любой кнопки откр-ть модал.окно
+  btnModalCallbackOpen.forEach(btn => {
+    btn.addEventListener('click', () => { 
+      openModal(modalWindow, overlay);
+    });
+  });
+  function closeModal(window, background) {
+    window.classList.toggle('active');
+    background.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  // реал.функ-л закрытия модал. окна по клику вне мод. окна и на "крестик"
+  modalField.addEventListener('click', (e) => {
+    if(e.target === modalField || e.target.getAttribute('data-close') == '') {
+      closeModal(modalWindow, overlay);
+    }
+  });
+  // закрытия модал. окна по ESС. Cобытие keydown срабатывает, когда клавиша была нажата
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape' && modalWindow.classList.contains('active')) {
+      closeModal(modalWindow, overlay);
+    }
+  });
+
   // Send form to my Telegram, Validate input
   const phoneInput = document.querySelector('.callback__telephone'),
         nameInputRecall = document.querySelector('.callback__names'),
@@ -134,7 +164,6 @@ window.addEventListener('DOMContentLoaded', () => {
       let keyCode;
       function mask(event) {
         event.keyCode && (keyCode = event.keyCode);
-        // Element.selectionStart - повертає/задає позицію початку виділення у текстовому полі textarea або input
         let pos = this.selectionStart;
         if (pos < 3) event.preventDefault();
         let matrix = "+38(___)___-__-__",
@@ -191,53 +220,24 @@ window.addEventListener('DOMContentLoaded', () => {
         text + '&parse_mode=html') 
         .then( () => {
           showSuccessForm();
-          closeModal();
+          closeModal(modalWindow, overlay);
         })
         .catch( () => { 
           showErrorForm(); 
-          closeModal();
+          closeModal(modalWindow, overlay);
         })
         .finally( () => {
           form.reset();
+          closeModal(modalWindow, overlay);
         }); 
       } else {
         showInfoValidate();
+        // overlay.classList.remove('active');
+        closeModal(modalWindow, overlay);
       }
     });
   }
   postDataRecall(formRecall);
-
-  // Modal-window-callback
-  function openModal(window, background) {
-    window.classList.toggle('active');
-    background.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  // переберем наши кнопки btnModalOpen чтобы мы могли с любой кнопки откр-ть модал.окно
-  btnModalCallbackOpen.forEach(btn => {
-    btn.addEventListener('click', () => { 
-      openModal(modalWindow, overlay);
-    });
-  });
-
-  function closeModal(window, background) {
-    window.classList.toggle('active');
-    background.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  // реал.функ-л закрытия модал. окна по клику вне мод. окна и на "крестик"
-  modalField.addEventListener('click', (e) => {
-    if(e.target === modalField || e.target.getAttribute('data-close') == '') {
-      closeModal(modalWindow, overlay);
-    }
-  });
-  // закрытия модал. окна по ESС. Cобытие keydown срабатывает, когда клавиша была нажата
-  document.addEventListener('keydown', (e) => {
-    if (e.code === 'Escape' && modalWindow.classList.contains('active')) {
-      closeModal(modalWindow, overlay);
-    }
-  });
-
 
   // Gallery for image
   let galleryJS = document.querySelectorAll('.gallery-js');
@@ -306,6 +306,9 @@ window.addEventListener('DOMContentLoaded', () => {
       `);
     });
   }
+
+
+  
 
 
 });
