@@ -5,7 +5,7 @@
   <h3 align="center">The project created in Gulp</h3>
 </p>
 
-link to example: 
+link to example: https://dmytrokabluchii.github.io/Books_landing/
 
 Single page landing, responsive design.
 
