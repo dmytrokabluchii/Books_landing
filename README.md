@@ -5,15 +5,20 @@
   <h3 align="center">The project created in Gulp</h3>
 </p>
 
-link to example: https://dmytrokabluchii.github.io/Books_landing/
+link to example: https://dmytrokabluchii.github.io/Books_landing/ 
 
 Single page landing, responsive design.
 
 Technologies used: HTML, SCSS , Pure Java Script, Telegram bot, Swiper.js, Gulp.
 
 To start gulp project:
+<br>
 npm install --global gulp-cli
+<br>
 npm init
+<br>
 npm install --save-dev gulp
+<br>
 gulp build (if appear error, to start "gulp build" second time!)
+<br>
 gulp serve
