@@ -306,7 +306,7 @@
         <div class="callback__content">
             <div class="callback__close_btn" data-close></div>
             <div class="callback__title">
-                Write your name and phone number and our operator contact with you!
+                Write your name, phone number and our operator contact with you!
             </div>
             <form class="callback__form" id="my_callback-form" method="post">    
                 <div class="callback__name">
@@ -409,7 +409,7 @@
                         As the book contains theoretical content as well as solved questions.
                     </div>
                     <div class="info__print">
-                        <div class="info__print_text circle">Printed Book</div>
+                        <a class="info__print_text print-link circle" href="#!">Printed Book</a>
                     </div>
                     <div class="info__button">
                         <button class="info__btn btn-now" data-modal>
@@ -434,7 +434,7 @@
                         As the book contains theoretical content as well as solved questions.
                     </div>
                     <div class="info__print">
-                        <div class="info__print_text circle">Printed Book</div>
+                        <a class="info__print_text print-link circle" href="#!">Printed Book</a>
                     </div>
                     <div class="info__button">
                         <button class="info__btn btn-now" data-modal>
@@ -477,11 +477,11 @@
                         <div class="item-about__counter">02</div>
                         <div class="item-about__info">Books Published</div>
                     </div>
-                    <div class="item-about">
+                    <div class="item-about about__amount_border">
                         <div class="item-about__counter">4.5</div>
                         <div class="item-about__info">User Reviews</div>
                     </div>
-                    <div class="item-about">
+                    <div class="item-about about__amount_border">
                         <div class="item-about__counter">04</div>
                         <div class="item-about__info">Best Seller Awards</div>
                     </div>
@@ -526,7 +526,7 @@
         <div class="partners__info">
             <ul class="partners__column">
                 <li class="partners__item">
-                    <a class="partners-link" href="#">
+                    <a class="partners-link" href="#!">
                         <div class="partners-link__icon">
                             <img class="partners-link__logo"
                             src="assets/images/svg/Partners_icon_01.svg" alt="partners-logo">
@@ -537,7 +537,7 @@
                     </a>
                 </li>
                 <li class="partners__item">
-                    <a class="partners-link" href="#">
+                    <a class="partners-link" href="#!">
                         <div class="partners-link__icon">
                             <img class="partners-link__logo"
                             src="assets/images/svg/Partners_icon_02.svg" alt="partners-logo">
@@ -548,7 +548,7 @@
                     </a>
                 </li>
                 <li class="partners__item">
-                    <a class="partners-link" href="#">
+                    <a class="partners-link" href="#!">
                         <div class="partners-link__icon">
                             <img class="partners-link__logo"
                             src="assets/images/svg/Partners_icon_03.svg" alt="partners-logo">
@@ -559,7 +559,7 @@
                     </a>
                 </li>
                 <li class="partners__item">
-                    <a class="partners-link" href="#">
+                    <a class="partners-link" href="#!">
                         <div class="partners-link__icon">
                             <img class="partners-link__logo"
                             src="assets/images/svg/Partners_icon_04.svg" alt="partners-logo">
@@ -585,7 +585,7 @@
                 We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers.
             </div>
             <div class="booking__button">
-                <button class="booking__button-el btn-now" data-modal_ordertoday>
+                <button class="booking__button-el btn-now" data-modal>
                     Order Today
                 </button>
             </div>
@@ -652,7 +652,7 @@
         <div class="chapter__main">
             <ul class="chapter__main-column">
                 <li class="item-chapter">
-                    <a href="#" class="item-chapter__link">
+                    <a href="#!" class="item-chapter__link">
                         <div class="item-books">
                             <div class="item-books__title">Chapter-1 Get Started Intro</div>
                             <div class="item-books__subtitle">You can double your knowledge by reading this ever 
@@ -672,7 +672,7 @@
                     </a>
                 </li>
                 <li class="item-chapter">
-                    <a href="#" class="item-chapter__link">
+                    <a href="#!" class="item-chapter__link">
                         <div class="item-books">
                             <div class="item-books__title">Chapter-2 The Roman Culture</div>
                             <div class="item-books__subtitle">It will help to improve your life career with the perfect 
@@ -692,7 +692,7 @@
                     </a>
                 </li>
                 <li class="item-chapter">
-                    <a href="#" class="item-chapter__link">
+                    <a href="#!" class="item-chapter__link">
                         <div class="item-books">
                             <div class="item-books__title">Chapter-3 How They Servived</div>
                             <div class="item-books__subtitle">We wanted to create an easy, convenient way for you to get your books & support.
@@ -712,7 +712,7 @@
                     </a>
                 </li>
                 <li class="item-chapter">
-                    <a href="#" class="item-chapter__link">
+                    <a href="#!" class="item-chapter__link">
                         <div class="item-books">
                             <div class="item-books__title">Chapter-4 The End Of Romans</div>
                             <div class="item-books__subtitle">Promote your book via Pages shop to support your writing 
@@ -881,7 +881,7 @@
                 <!-- В блоці динамічна загрузка карток з JSON до слайдеру! -->
                 <ul class="cards-slider__column swiper-wrapper" id="cards_slide">
                     <!-- <li class="cards-item swiper-slide">
-                        <div class="cards-link" href="#">
+                        <a class="cards-link" href="#">
                             <div class="cards-link__image">
                                 <img class="cards-pic" src="assets/images/Cards_pic_01.jpg" alt="cards-image">
                             </div>
@@ -893,7 +893,7 @@
                                     <div class="info-footer__date">October 6, 2021</div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </li>
                     <li class="cards-item swiper-slide">
                         <a class="cards-link" href="#">
@@ -991,13 +991,15 @@
             edition at your fingertip with in a minute.
         </div>
         <div class="subscribe__form">
-            <form class="form-subscribe" action="sender.php" id="my_subscribe-form" method="post">
+            <form class="form-subscribe" action="#" id="my_subscribe-form" 
+            method="post">
                 <div class="form-subscribe__email">
                     <input class="form-subscribe__email_input form-row" id="email_subscribe" type="email" 
                     name="subscribe_email" placeholder="Your Email ID..." required>
                 </div>
                 <div class="form-subscribe__button">
-                    <button class="form-subscribe__button_btn btn-order" type="button" data-modal_subscribe>
+                    <button class="form-subscribe__button_btn btn-order" 
+                    type="button" value="Send Email" onclick="sendEmail()" data-modal_subscribe>
                         Subscribe
                     </button>
                 </div>
@@ -1180,6 +1182,7 @@
     <script src="./assets/plugins/galleryjs/lg-zoom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./assets/js/all.min.js"></script>
 </body>
 </html>

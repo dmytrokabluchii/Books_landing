@@ -74,12 +74,20 @@
                         line-height: 90%;
                         font-weight: 400;
                         letter-spacing: 0.003em;
+                        transition: $transition4s;
                         position: relative;
                         &:before {   
+                            transition: $transition4s;
                             width: 14px;
                             height: 14px;          
-                            bottom: 3px;
+                            bottom: 9px;
                             left: -25px;
+                        }
+                        &:hover {
+                            color: $color_dorange;
+                            &:before {  
+                                background-color: $color_black;
+                            }
                         }
                     }
                 }

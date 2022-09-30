@@ -20,19 +20,28 @@
         .partners-link {
             text-align: center;
             cursor: pointer;
+            transition: $transition4s;
             &__icon {
                 padding-bottom: 27px;
-                &__logo use {
-                    width: 189px;
-                    height: 100px;
-                    fill: aqua;
-                }
                 img {
+                    transition: $transition4s;
                     max-width: 189px;
                     max-height: 100px;
                 }
             }
+            &:hover {
+                .partners-link__logo {
+                    transform: scale(1.11);
+                }
+                .partners-link__title {
+                    color: $color_orange;
+                }
+                .item-subtitle {
+                    color: $color_dblue;
+                }
+            }
             &__title {
+                transition: $transition4s;
                 font-family: "Cardo";
                 color: $color_dblue;
                 @include fz(24);
@@ -42,6 +51,7 @@
                 padding: 0 10px 25px;
             }
             .item-subtitle {
+                transition: $transition4s;
                 line-height: 135%;
                 padding: 0 10px;
             }

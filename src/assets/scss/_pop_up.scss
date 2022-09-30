@@ -7,7 +7,6 @@
     z-index: 999;
     width: 100%;
     height: 100%;
-    // overflow: auto;
     overflow: hidden;
     transition: .9s all;
     .callback__field {
@@ -18,8 +17,8 @@
     }
     .callback__content {
         position: relative;
-        max-width: 400px;
-        padding: 30px;
+        max-width: 450px;
+        padding: 35px;
         background: linear-gradient(45deg, rgb(144, 144, 99), rgb(9, 48, 67));
         color: $color_white;
     }
@@ -27,8 +26,8 @@
         position: absolute;
         top: -12px;
         right: -12px;
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         background: linear-gradient(45deg, rgb(144, 144, 99), rgb(9, 48, 67));
         cursor: pointer;
@@ -37,8 +36,8 @@
             background-color: $color_white;
             position: absolute;
             height: 2px;
-            width: 20px;
-            top: 15px;
+            width: 25px;
+            top: 16px;
             left: 5px;
             transform: rotate(-45deg);
             opacity: 0.7;
@@ -49,8 +48,8 @@
             background-color: $color_white;
             position: absolute;
             height: 2px;
-            width: 20px;
-            top: 15px;
+            width: 25px;
+            top: 16px;
             transform: rotate(45deg);
             left: 5px;
             opacity: 0.7;
@@ -62,7 +61,7 @@
     }
     .callback__title {
         padding-bottom: 30px;
-        @include fz(19);
+        @include fz(22);
         text-align: center;
     }
 
@@ -77,6 +76,7 @@
             border-left: 5px solid rgba(126, 128, 129, 0);
             background-color: $color_white;
             width: 100%;
+            height: 40px;
         }
         ::placeholder {
             color: #1D1B1B;
@@ -95,7 +95,7 @@
             justify-content: center;
             align-items: center;
             .btn-order {
-                padding: 18px 60px;
+                padding: 19px 65px;
             }
         }
     }

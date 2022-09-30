@@ -50,6 +50,18 @@
         gap: 20px;
         padding: 0 0 58px 10px;
     }
+    .about__amount_border {
+        position: relative;
+        &:before {             
+            content: '';
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: -40px;
+            background-color: $color_orange;
+        }
+    }
     .item-about {
         &__counter {
             font-family: "Cardo";

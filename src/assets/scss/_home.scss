@@ -57,6 +57,7 @@
                 .item-row {
                     cursor: pointer;
                     &__title {
+                        transition: $transition4s;
                         padding-bottom: 18px;
                         position: relative;
                     }
@@ -66,14 +67,16 @@
                             left: -25px;
                         }
                     }
+                    &__text {
+                        color: $color_lblue;
+                    }
                     &:hover {
+                        .item-row__title {
+                            color: $color_orange;
+                        }
                         .circle::before {
                             background-color: $color_black;
                         }
-                    }
-                    &__text {
-                        color: $color_lblue;
-                        transition: $transition4s;
                     }
                 }
             }

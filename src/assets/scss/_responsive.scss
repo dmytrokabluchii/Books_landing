@@ -251,6 +251,13 @@ $base_size:16;
             }
         }
     }
+    .about {
+        .about__amount_border {
+            &:before {             
+                left: -25px;
+            }
+        }
+    }
     .footer {
         &__main {
             grid-template-columns: auto auto auto auto;
@@ -490,6 +497,16 @@ $base_size:16;
         &__wrapper {
             padding: 70px 0;
         }
+        .about__amount_border {
+            &:before {             
+                left: -15px;
+            }
+        }
+        &__amount {
+            .item-about {
+                text-align: center;
+            }
+        }
     }
     .partners {
         &__wrapper {
@@ -658,6 +675,11 @@ $base_size:16;
             .title::after {
                 bottom: -20px;
                 left: 48%;
+            }
+        }
+        .about__amount_border {
+            &:before {             
+                content: none;
             }
         }
         &__footer {
@@ -992,6 +1014,20 @@ $base_size:16;
         @include fz(16);
     }
 
+    .modal__callback {
+        .callback__content {
+            max-width: 285px;
+            padding: 25px;
+        }
+        .callback__form {
+            .callback__button {
+                .btn-order {
+                    padding: 14px 54px;
+                }
+            }
+        }
+    }
+
     .home {
         .home-main {
             gap: 20px;
@@ -1188,12 +1224,6 @@ $base_size:16;
 
 
 
-
-
-
-
-
-
 @media screen and (max-height:599px) {
     .mobile {
         .mobile-menu {
@@ -1258,6 +1288,26 @@ $base_size:16;
         .mobile-menu__footer {
             gap: 10px;
             padding: 10px 0 85px;
+        }
+    }
+    .modal__callback {
+        .callback__content {
+            max-width: 390px;
+            padding: 15px;
+        }
+        .callback__title {
+            padding-bottom: 15px;
+            @include fz(21);
+        }
+        .callback__form {
+            .callback__phone, .callback__name {
+                padding-bottom: 10px;
+            }
+            .callback__button {
+                .btn-order {
+                    padding: 14px 54px;
+                }
+            }
         }
     }
 }

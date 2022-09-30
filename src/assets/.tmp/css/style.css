@@ -576,8 +576,8 @@ input {
 }
 .modal__callback .callback__content {
   position: relative;
-  max-width: 400px;
-  padding: 30px;
+  max-width: 450px;
+  padding: 35px;
   background: linear-gradient(45deg, #909063, #093043);
   color: #fff;
 }
@@ -585,8 +585,8 @@ input {
   position: absolute;
   top: -12px;
   right: -12px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background: linear-gradient(45deg, #909063, #093043);
   cursor: pointer;
@@ -596,8 +596,8 @@ input {
   background-color: #fff;
   position: absolute;
   height: 2px;
-  width: 20px;
-  top: 15px;
+  width: 25px;
+  top: 16px;
   left: 5px;
   transform: rotate(-45deg);
   opacity: 0.7;
@@ -608,8 +608,8 @@ input {
   background-color: #fff;
   position: absolute;
   height: 2px;
-  width: 20px;
-  top: 15px;
+  width: 25px;
+  top: 16px;
   transform: rotate(45deg);
   left: 5px;
   opacity: 0.7;
@@ -620,7 +620,7 @@ input {
 }
 .modal__callback .callback__title {
   padding-bottom: 30px;
-  font-size: 1.1875rem;
+  font-size: 1.375rem;
   text-align: center;
 }
 .modal__callback .callback__form label, .modal__callback .callback__form input {
@@ -633,6 +633,7 @@ input {
   border-left: 5px solid rgba(126, 128, 129, 0);
   background-color: #fff;
   width: 100%;
+  height: 40px;
 }
 .modal__callback .callback__form ::placeholder {
   color: #1D1B1B;
@@ -652,7 +653,7 @@ input {
   align-items: center;
 }
 .modal__callback .callback__form .callback__button .btn-order {
-  padding: 18px 60px;
+  padding: 19px 65px;
 }
 
 .overlay {
@@ -738,6 +739,7 @@ input {
   cursor: pointer;
 }
 .home .home-main .home-window__row .item-row__title {
+  transition: all 0.4s ease-in-out;
   padding-bottom: 18px;
   position: relative;
 }
@@ -745,12 +747,14 @@ input {
   bottom: 20px;
   left: -25px;
 }
-.home .home-main .home-window__row .item-row:hover .circle::before {
-  background-color: #000;
-}
 .home .home-main .home-window__row .item-row__text {
   color: #B4C7E7;
-  transition: all 0.4s ease-in-out;
+}
+.home .home-main .home-window__row .item-row:hover .item-row__title {
+  color: #FFCA42;
+}
+.home .home-main .home-window__row .item-row:hover .circle::before {
+  background-color: #000;
 }
 .home .home-main__element {
   flex: 1 1 51.5%;
@@ -852,13 +856,21 @@ input {
   line-height: 90%;
   font-weight: 400;
   letter-spacing: 0.003em;
+  transition: all 0.4s ease-in-out;
   position: relative;
 }
 .books__column .page-books .info__print_text:before {
+  transition: all 0.4s ease-in-out;
   width: 14px;
   height: 14px;
-  bottom: 3px;
+  bottom: 9px;
   left: -25px;
+}
+.books__column .page-books .info__print_text:hover {
+  color: #ab8422;
+}
+.books__column .page-books .info__print_text:hover:before {
+  background-color: #000;
 }
 
 .about__wrapper {
@@ -911,6 +923,18 @@ input {
   justify-content: space-between;
   gap: 20px;
   padding: 0 0 58px 10px;
+}
+.about .about__amount_border {
+  position: relative;
+}
+.about .about__amount_border:before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+  background-color: #FFCA42;
 }
 .about .item-about__counter {
   font-family: "Cardo";
@@ -983,20 +1007,27 @@ input {
 .partners__item .partners-link {
   text-align: center;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
 .partners__item .partners-link__icon {
   padding-bottom: 27px;
 }
-.partners__item .partners-link__icon__logo use {
-  width: 189px;
-  height: 100px;
-  fill: aqua;
-}
 .partners__item .partners-link__icon img {
+  transition: all 0.4s ease-in-out;
   max-width: 189px;
   max-height: 100px;
 }
+.partners__item .partners-link:hover .partners-link__logo {
+  transform: scale(1.11);
+}
+.partners__item .partners-link:hover .partners-link__title {
+  color: #FFCA42;
+}
+.partners__item .partners-link:hover .item-subtitle {
+  color: #1B3764;
+}
 .partners__item .partners-link__title {
+  transition: all 0.4s ease-in-out;
   font-family: "Cardo";
   color: #1B3764;
   font-size: 1.5rem;
@@ -1006,6 +1037,7 @@ input {
   padding: 0 10px 25px;
 }
 .partners__item .partners-link .item-subtitle {
+  transition: all 0.4s ease-in-out;
   line-height: 135%;
   padding: 0 10px;
 }
@@ -1150,6 +1182,7 @@ input {
   padding: 43px 70px 55px 40px;
 }
 .chapter__main-column li a .item-books__title {
+  transition: all 0.4s ease-in-out;
   padding-bottom: 25px;
   font-family: "Cardo";
   color: #1B3764;
@@ -1158,6 +1191,7 @@ input {
   font-weight: 400;
 }
 .chapter__main-column li a .item-books__subtitle {
+  transition: all 0.4s ease-in-out;
   padding-bottom: 18px;
   font-family: "Inter";
   color: #969AA0;
@@ -1184,7 +1218,17 @@ input {
   left: -25px;
 }
 .chapter__main-column li a .item-books__footer .item-row__text {
+  transition: all 0.4s ease-in-out;
   color: #969AA0;
+}
+.chapter__main-column li a:hover .item-books__title {
+  color: #FFCA42;
+}
+.chapter__main-column li a:hover .item-books__subtitle, .chapter__main-column li a:hover .item-row__text {
+  color: #000;
+}
+.chapter__main-column li a:hover .circle::before {
+  background-color: #000;
 }
 .chapter__main-button {
   display: flex;
@@ -1334,8 +1378,14 @@ input {
   overflow: hidden;
 }
 .cards .cards-slider .cards-item {
-  width: 100%;
   height: 100%;
+  width: 100%;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.cards .cards-slider .cards-item:hover {
+  overflow: hidden;
+  transform: scale(1.02);
 }
 .cards .cards-slider .cards-link__image .cards-pic {
   border-top-left-radius: 5px;
@@ -1763,6 +1813,10 @@ input {
     padding: 17px 40px;
   }
 
+  .about .about__amount_border:before {
+    left: -25px;
+  }
+
   .footer__main {
     grid-template-columns: auto auto auto auto;
   }
@@ -1961,6 +2015,12 @@ input {
   .about__wrapper {
     padding: 70px 0;
   }
+  .about .about__amount_border:before {
+    left: -15px;
+  }
+  .about__amount .item-about {
+    text-align: center;
+  }
 
   .partners__wrapper {
     padding: 70px 0;
@@ -2106,6 +2166,9 @@ input {
   .about__title .title::after {
     bottom: -20px;
     left: 48%;
+  }
+  .about .about__amount_border:before {
+    content: none;
   }
   .about__footer .wrapper-contacts {
     gap: 40px;
@@ -2374,6 +2437,14 @@ input {
     font-size: 1rem;
   }
 
+  .modal__callback .callback__content {
+    max-width: 285px;
+    padding: 25px;
+  }
+  .modal__callback .callback__form .callback__button .btn-order {
+    padding: 14px 54px;
+  }
+
   .home .home-main {
     gap: 20px;
   }
@@ -2548,5 +2619,20 @@ input {
   .mobile .mobile-menu__footer {
     gap: 10px;
     padding: 10px 0 85px;
+  }
+
+  .modal__callback .callback__content {
+    max-width: 390px;
+    padding: 15px;
+  }
+  .modal__callback .callback__title {
+    padding-bottom: 15px;
+    font-size: 1.3125rem;
+  }
+  .modal__callback .callback__form .callback__phone, .modal__callback .callback__form .callback__name {
+    padding-bottom: 10px;
+  }
+  .modal__callback .callback__form .callback__button .btn-order {
+    padding: 14px 54px;
   }
 }

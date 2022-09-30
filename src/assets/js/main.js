@@ -7,7 +7,8 @@ window.addEventListener('DOMContentLoaded', () => {
     modalWindow = document.querySelector('.modal__callback'),
     modalField = document.querySelector('.callback__field'),
     overlay = document.querySelector('.overlay'),
-    btnModalCallbackOpen = document.querySelectorAll('[data-modal]');
+    btnModalCallbackOpen = document.querySelectorAll('[data-modal]'),
+    emailSubscribe = document.getElementById('email_subscribe');
 
     function showSuccessForm() {
       Swal.fire({
@@ -22,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
       Swal.fire({
         position: 'top-end',
         icon: 'info',
-        title: 'Fill all fields!',
+        title: 'Fill all fields marked *',
         showConfirmButton: false,
         timer: 4000
       });
@@ -139,11 +140,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Send form to my Telegram, Validate input
+  // Send form to my Telegram, Email, Validate input
   const phoneInput = document.querySelector('.callback__telephone'),
         nameInputRecall = document.querySelector('.callback__names'),
         phoneInputRecall = document.querySelector('.callback__telephone'),
         formRecall =  document.querySelector('#my_callback-form'),
+        // formSubscribe =  document.querySelector('#my_subscribe-form'),
         BOT_TOKEN = '5324396066:AAFDhE5HZ4_mI54HC4OmzWCfjxawduNh8S8',
         CHAT_ID = '-1001758890997';
 
@@ -197,6 +199,26 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
   maskPhone();
+
+  // Validate EMAIL
+  function validateEmail(email) {
+    const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+    function onInputEmail() {
+      if (isEmailValid(email.value)) {
+        email.style.borderColor = 'green';
+      } else {
+        email.style.borderColor = 'red';
+      }
+      return;
+    }
+    email.addEventListener('input', onInputEmail); 
+    function isEmailValid(value) {
+      return EMAIL_REGEXP.test(value);
+    }
+  }
+  validateEmail(emailSubscribe);
+
+
 
   phoneInput.addEventListener('input', () => {
     onInputPhone(phoneInput);
@@ -289,7 +311,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // append HTML-JSON data to slider
       swiper.appendSlide(`
         <li class="cards-item swiper-slide">
-          <div class="cards-link" href="#">
+          <a class="cards-link" href="#!">
               <div class="cards-link__image">
                   <img class="cards-pic" src="assets/images/cards/${image}" alt="cards-image">
               </div>
@@ -301,17 +323,26 @@ window.addEventListener('DOMContentLoaded', () => {
                     <div class="info-footer__date">${date}</div>
                 </div>
               </div>
-          </div>
+          </a>
         </li>
       `);
     });
-  }
-
-
-  
-
+  } 
 
 });
 
 
-
+function sendEmail() {
+  Email.send({
+    SecureToken : "0c4b3cd8-ac77-4e49-88e6-104e70521580",
+    Host : "smtp.elasticemail.com",
+    Username : "<Dima>",
+    Password : "<1984>",
+    To : 'dim8484@ukr.net',
+    From : "https://dmytrokabluchii.github.io/Books_landing/",
+    Subject : "Test email",
+    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+    }).then(
+    message => alert(message)
+  );
+}
