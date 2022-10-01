@@ -7,45 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     modalWindow = document.querySelector('.modal__callback'),
     modalField = document.querySelector('.callback__field'),
     overlay = document.querySelector('.overlay'),
-    btnModalCallbackOpen = document.querySelectorAll('[data-modal]'),
-    emailSubscribe = document.getElementById('email_subscribe');
-
-    function showSuccessForm() {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Your message send, wait for call from our operator',
-        showConfirmButton: false,
-        timer: 5000,
-      });
-    }
-    function showInfoValidate() {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'info',
-        title: 'Fill all fields marked *',
-        showConfirmButton: false,
-        timer: 4000
-      });
-    }
-    function showErrorForm() {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error server, the message don`t send',
-        showConfirmButton: false,
-        timer: 4000
-      });
-    }
-    function showCardsError() {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error server, the information of block "Articles & Resources" can`t downloading',
-        showConfirmButton: false,
-        timer: 4000
-      });
-    }
+    btnModalCallbackOpen = document.querySelectorAll('[data-modal]');
 
   // Preloader page
   function startPreload() {
@@ -145,7 +107,9 @@ window.addEventListener('DOMContentLoaded', () => {
         nameInputRecall = document.querySelector('.callback__names'),
         phoneInputRecall = document.querySelector('.callback__telephone'),
         formRecall =  document.querySelector('#my_callback-form'),
-        // formSubscribe =  document.querySelector('#my_subscribe-form'),
+        formSubscribe =  document.querySelector('#my_subscribe-form'),
+        emailSubscribe = document.querySelector('#email_subscribe'),
+        btnSubscribe = document.querySelector('[data-modal_subscribe]'),
         BOT_TOKEN = '5324396066:AAFDhE5HZ4_mI54HC4OmzWCfjxawduNh8S8',
         CHAT_ID = '-1001758890997';
 
@@ -218,12 +182,36 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   validateEmail(emailSubscribe);
 
+  // Send data to my email(using smtpjs.com)
+  function sendEmail(email, form) {
+    btnSubscribe.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (email.value !== '') {
+        Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "dim8484@ukr.net",
+          Password : "7BD93CC22771A12713C1D25E67A55F475060",
+          To : 'dim8484@ukr.net',
+          From : email.value,
+          Subject : "Subscriber's email from The Author’s Book website",
+          Body : `Email subscriber: ${email.value}`
+        }).then(
+          message => showInfoSendMail(message)
+        )
+        .finally( () => {
+          form.reset();
+        });
+      } else {
+        showInfoValidate();
+      }
+    });
+  }
+  sendEmail(emailSubscribe, formSubscribe);
 
-
+  // Add border-color for phone-inputs
   phoneInput.addEventListener('input', () => {
     onInputPhone(phoneInput);
   });
-  // Add border-color for phone-input
   function onInputPhone(phone) {
     if (phone.value.length < 17) {
       phone.style.borderColor = 'red';
@@ -254,8 +242,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }); 
       } else {
         showInfoValidate();
-        // overlay.classList.remove('active');
-        closeModal(modalWindow, overlay);
+        modalWindow.classList.add('active');
       }
     });
   }
@@ -329,20 +316,54 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   } 
 
+  // Alert-function from sweetAlert
+  function showSuccessForm() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your message send, wait for call from our operator',
+      showConfirmButton: false,
+      timer: 5000,
+    });
+  }
+  function showInfoValidate() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'info',
+      title: 'Fill all fields',
+      showConfirmButton: false,
+      timer: 3000
+    });
+  }
+  function showErrorForm() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Error server, the message don`t send',
+      showConfirmButton: false,
+      timer: 4000
+    });
+  }
+  function showInfoSendMail(text) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'info',
+      title: text,
+      showConfirmButton: false,
+      timer: 6000,
+    });
+  }
+  
+  function showCardsError() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Error server, the information of block "Articles & Resources" can`t downloading',
+      showConfirmButton: false,
+      timer: 5000
+    });
+  }
 });
 
 
-function sendEmail() {
-  Email.send({
-    SecureToken : "0c4b3cd8-ac77-4e49-88e6-104e70521580",
-    Host : "smtp.elasticemail.com",
-    Username : "<Dima>",
-    Password : "<1984>",
-    To : 'dim8484@ukr.net',
-    From : "https://dmytrokabluchii.github.io/Books_landing/",
-    Subject : "Test email",
-    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
-    }).then(
-    message => alert(message)
-  );
-}
+
