@@ -610,8 +610,8 @@ input {
   height: 2px;
   width: 25px;
   top: 16px;
-  transform: rotate(45deg);
   left: 5px;
+  transform: rotate(45deg);
   opacity: 0.7;
   transition: all 0.3s ease-in-out;
 }
@@ -653,7 +653,7 @@ input {
   align-items: center;
 }
 .modal__callback .callback__form .callback__button .btn-order {
-  padding: 19px 65px;
+  padding: 18px 70px;
 }
 
 .overlay {
@@ -982,6 +982,12 @@ input {
   line-height: 130%;
   font-weight: 400;
   letter-spacing: 0.03em;
+}
+.about__footer .wrapper-contacts__phone_link, .about__footer .wrapper-contacts__mail_link {
+  transition: all 0.3s ease-in-out;
+}
+.about__footer .wrapper-contacts__phone_link:hover, .about__footer .wrapper-contacts__mail_link:hover {
+  color: #FFCA42;
 }
 .about__footer .wrapper-contacts__mail {
   padding-bottom: 10px;

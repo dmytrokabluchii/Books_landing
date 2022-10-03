@@ -109,6 +109,12 @@
                 font-weight: 400;
                 letter-spacing: 0.03em;
             }
+            &__phone_link, &__mail_link {
+                transition: $transition3s;
+                &:hover {
+                    color: $color_orange;
+                }  
+            }
             &__mail {
                 padding-bottom: 10px;
             }
