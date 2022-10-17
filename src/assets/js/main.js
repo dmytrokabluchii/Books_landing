@@ -315,6 +315,18 @@ window.addEventListener('DOMContentLoaded', () => {
       `);
     });
   } 
+  // toggle Btn Readmore
+  // const cardsContainer = document.querySelector('.cards-link__info');
+  // const toggleBtnReadmore = document.querySelectorAll('[data-modal_readmore]');
+  // function toggleCards(btn) {
+  //   btn.forEach(toggleBtn => {
+  //     toggleBtn.addEventListener('click', () => {
+  //       console.log('clickBTN');
+  //       cardsContainer.classList.toggle('active');
+  //     });
+  //   });
+  // }
+  // toggleCards(toggleBtnReadmore);
 
   // Alert-function from sweetAlert
   function showSuccessForm() {
@@ -363,6 +375,7 @@ window.addEventListener('DOMContentLoaded', () => {
       timer: 5000
     });
   }
+
 });
 
 
